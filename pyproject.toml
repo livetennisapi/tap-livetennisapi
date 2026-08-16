@@ -1,0 +1,49 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tap-livetennisapi"
+version = "0.1.0"
+description = "Singer tap for the Live Tennis API, built with the Meltano Singer SDK."
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "Live Tennis API", email = "hello@livetennisapi.com" }]
+keywords = ["ELT", "singer.io", "tennis", "Live Tennis API"]
+requires-python = ">=3.10"
+classifiers = [
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+dependencies = [
+    "singer-sdk>=0.44,<1",
+    "requests>=2.31,<3",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=8",
+    "singer-sdk[testing]",
+    "responses>=0.25",
+]
+
+[project.urls]
+Homepage = "https://livetennisapi.com"
+Documentation = "https://docs.livetennisapi.com"
+Repository = "https://github.com/livetennisapi/tap-livetennisapi"
+Changelog = "https://github.com/livetennisapi/tap-livetennisapi/blob/main/CHANGELOG.md"
+
+[project.scripts]
+tap-livetennisapi = "tap_livetennisapi.tap:TapLiveTennisAPI.cli"
+
+[tool.hatch.build.targets.wheel]
+packages = ["tap_livetennisapi"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
