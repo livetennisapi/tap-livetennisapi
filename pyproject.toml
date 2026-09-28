@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Singer tap for the Live Tennis API, built with the Meltano Singer SDK."
 readme = "README.md"
 license = "MIT"
-authors = [{ name = "Live Tennis API", email = "hello@livetennisapi.com" }]
+authors = [{ name = "Synapse Research Ltd", email = "hello@livetennisapi.com" }]
 keywords = ["ELT", "singer.io", "tennis", "Live Tennis API"]
 requires-python = ">=3.10"
 classifiers = [
@@ -37,6 +37,7 @@ Homepage = "https://livetennisapi.com"
 Documentation = "https://docs.livetennisapi.com"
 Repository = "https://github.com/livetennisapi/tap-livetennisapi"
 Changelog = "https://github.com/livetennisapi/tap-livetennisapi/blob/main/CHANGELOG.md"
+Author = "https://synapsereality.io"
 
 [project.scripts]
 tap-livetennisapi = "tap_livetennisapi.tap:TapLiveTennisAPI.cli"
